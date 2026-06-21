@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bl5ytqge8u2qw"]
+
+[ext_resource type="Script" uid="uid://ckyhvkx5liedt" path="res://scripts/door.gd" id="1_51wu3"]
+[ext_resource type="PackedScene" uid="uid://dgsr45sv71d6c" path="res://assets/meshes/sci_fi_door.glb" id="1_vq3em"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51wu3"]
+size = Vector3(1.2094116, 1.3270874, 0.5819702)
+
+[node name="Door" type="StaticBody3D" unique_id=1831943623]
+script = ExtResource("1_51wu3")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1294325177 instance=ExtResource("1_vq3em")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=41431021]
+transform = Transform3D(2.56, 0, 0, 0, 2.56, 0, 0, 0, 2.56, 0.021640621, 1.7267323, -0.030234396)
+shape = SubResource("BoxShape3D_51wu3")
+
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="." unique_id=323931005]

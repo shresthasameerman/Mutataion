@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dik6qesclnyy2"]
+
+[ext_resource type="PackedScene" uid="uid://d3e2v7dv71mem" path="res://assets/meshes/sci_fi_console_game_fbx.glb" id="1_f83s2"]
+
+[node name="console" unique_id=1051304763 instance=ExtResource("1_f83s2")]

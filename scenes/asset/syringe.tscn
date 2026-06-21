@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ctt58fkd1obrs"]
+
+[ext_resource type="Script" uid="uid://bb0kssg8np45h" path="res://scripts/syringe.gd" id="1_4h5mu"]
+[ext_resource type="PackedScene" uid="uid://bbon11kcsqkw0" path="res://assets/meshes/vintage_medieval_medical_syringe_fbx.glb" id="2_5agyu"]
+[ext_resource type="AudioStream" uid="uid://c5ioieksr0yng" path="res://assets/sounds/freesound_community-item-pickup-37089.mp3" id="3_m1lch"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4h5mu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h5mu"]
+emission_enabled = true
+emission = Color(0, 1, 0.39215687, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vjcr4"]
+height = 4.2603655
+
+[node name="syringe" type="Area3D" unique_id=155237025]
+script = ExtResource("1_4h5mu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124544753]
+transform = Transform3D(1, 0, 0, 0, 1.7853903, 0, 0, 0, 1, 0, 1.2113771, 0)
+mesh = SubResource("CapsuleMesh_4h5mu")
+surface_material_override/0 = SubResource("StandardMaterial3D_4h5mu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=28111497]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.1026638, 0)
+shape = SubResource("CapsuleShape3D_vjcr4")
+debug_color = Color(0.9838664, 0, 0.35340554, 0.41960785)
+
+[node name="Sketchfab_Scene" parent="." unique_id=670620464 instance=ExtResource("2_5agyu")]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 0, 0)
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="." unique_id=1062104385]
+stream = ExtResource("3_m1lch")

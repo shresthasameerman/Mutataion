@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://hx6ir2dqxstk"]
+
+[ext_resource type="Script" uid="uid://boe1p10d3ic34" path="res://scripts/hud.gd" id="1_0mwgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mwgc"]
+bg_color = Color(0.6, 0.6, 0.6, 0.29411766)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqnrr"]
+bg_color = Color(0.9058309, 0.3491902, 0.3491902, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=2138056657]
+script = ExtResource("1_0mwgc")
+
+[node name="Control" type="Control" parent="." unique_id=1580632059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DoseLabel" type="Label" parent="Control" unique_id=285162312]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 108.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 24
+text = "Doses: 0 / 3"
+horizontal_alignment = 1
+
+[node name="Vignette" type="ColorRect" parent="Control" unique_id=1039482049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="WarnLabel" type="Label" parent="Control" unique_id=1180077455]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 980.0
+offset_right = 620.0
+offset_bottom = 1003.0
+theme_override_colors/font_color = Color(1, 0.03529412, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="HealthBar" type="ProgressBar" parent="Control" unique_id=1789252143]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 220.0
+offset_bottom = 87.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0mwgc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hqnrr")
+value = 100.0

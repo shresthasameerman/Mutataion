@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d6x32710o5q2"]
+
+[ext_resource type="PackedScene" uid="uid://fhdon5yhipyv" path="res://assets/meshes/sci_fi_container_game_free_05_fbx.glb" id="1_sunt1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yshod"]
+size = Vector3(4.07, 1.145, 2.15)
+
+[node name="scifiBox1" unique_id=1945717284 instance=ExtResource("1_sunt1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=435832747]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=598337508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5388326, -0.014901936)
+shape = SubResource("BoxShape3D_yshod")
+debug_color = Color(10.229394, 11.285828, 0, 0.41960785)

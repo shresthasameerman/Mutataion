@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c07q5pxjicva8"]
+
+[ext_resource type="Script" uid="uid://bvy8tdq5k48yn" path="res://scripts/notes.gd" id="1_uptlh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvsyq"]
+size = Vector3(2.04, 0, 2.065)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uptlh"]
+albedo_color = Color(0.4707139, 0.427511, 0.38295338, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uptlh"]
+material = SubResource("StandardMaterial3D_uptlh")
+
+[node name="Notes" type="StaticBody3D" unique_id=1132235891]
+script = ExtResource("1_uptlh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=907458474]
+shape = SubResource("BoxShape3D_tvsyq")
+debug_color = Color(0, 11.715372, 13.504487, 0.42000002)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=885186759]
+mesh = SubResource("PlaneMesh_uptlh")
+
+[node name="NoteUI" type="CanvasLayer" parent="." unique_id=1047704980]
+
+[node name="Control" type="Control" parent="NoteUI" unique_id=832533367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="NoteUI/Control" unique_id=1444909595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -160.0
+offset_right = 250.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="NoteUI/Control/Panel" unique_id=2035235828]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_right = 112.5
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "SCRAP OF PAPER"
+
+[node name="TextLabel" type="Label" parent="NoteUI/Control/Panel" unique_id=1196815986]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 480.0
+offset_bottom = 70.00001
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+
+[node name="CloseBtn" type="Button" parent="NoteUI/Control/Panel" unique_id=946372095]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 240.0
+offset_right = 330.0
+offset_bottom = 285.0
+text = "Close"

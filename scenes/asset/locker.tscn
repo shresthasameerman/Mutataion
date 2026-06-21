@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cbcgcljl7sm5i"]
+
+[ext_resource type="PackedScene" uid="uid://dpicq4pgx857e" path="res://assets/meshes/crates/western_style_antique_safe.glb" id="1_i2gnn"]
+[ext_resource type="Script" uid="uid://blu1c0rkfb3v3" path="res://scripts/safelocker.gd" id="2_gpd55"]
+[ext_resource type="PackedScene" uid="uid://ctt58fkd1obrs" path="res://scenes/asset/syringe.tscn" id="2_oxmf4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpd55"]
+size = Vector3(0.50964355, 0.8486328, 0.5097656)
+
+[node name="Locker" unique_id=1388797875 instance=ExtResource("1_i2gnn")]
+
+[node name="Skeleton3D" parent="Sketchfab_model/5f7154f1dcf8493085b8f082b961b84c_fbx/Object_2/RootNode/Antique_Safe_BONES/Object_6" parent_id_path=PackedInt32Array(656911143) index="1" unique_id=1545779485]
+bones/1/rotation = Quaternion(-8.625386e-17, -0.76707435, -8.625387e-17, 0.64155835)
+bones/2/rotation = Quaternion(-0.64278734, -5.9604645e-08, 0.7660447, -3.5762787e-07)
+
+[node name="Door_Handle_02" parent="Sketchfab_model/5f7154f1dcf8493085b8f082b961b84c_fbx/Object_2/RootNode/Antique_Safe_BONES/Object_6/Skeleton3D" index="0" unique_id=74352057]
+transform = Transform3D(0.999995, -4.7305645e-07, 0.0032066852, -0.0032067448, -4.3035362e-07, 0.9999949, -4.7167393e-07, -1, -4.3186827e-07, -0.16092853, -0.2886011, 0.5440085)
+
+[node name="safelocker" type="StaticBody3D" parent="." index="2" unique_id=1602018100]
+script = ExtResource("2_gpd55")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="safelocker" index="0" unique_id=276156575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033569336, 0.43483037, -0.0059399903)
+shape = SubResource("BoxShape3D_gpd55")
+
+[node name="syringe" parent="safelocker" index="1" unique_id=155237025 instance=ExtResource("2_oxmf4")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.4834167, 0.16535898)
+
+[node name="KeypadUI" type="CanvasLayer" parent="safelocker" index="2" unique_id=1873053435]
+
+[node name="Control" type="Control" parent="safelocker/KeypadUI" index="0" unique_id=825186881]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 23.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="safelocker/KeypadUI/Control" index="0" unique_id=1539861528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 754.0
+offset_top = 416.0
+offset_right = -766.0
+offset_bottom = -424.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="safelocker/KeypadUI/Control" index="1" unique_id=907794956]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 416.0
+offset_right = 1134.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 22
+text = "Enter Code
+"
+
+[node name="CodeInput" type="LineEdit" parent="safelocker/KeypadUI/Control" index="2" unique_id=463849351]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 450.0
+offset_right = 1134.0
+offset_bottom = 490.0
+
+[node name="SubmitBtn" type="Button" parent="safelocker/KeypadUI/Control" index="3" unique_id=799810655]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 500.0
+offset_right = 944.0
+offset_bottom = 545.0
+theme_override_font_sizes/font_size = 22
+text = "Submit"
+
+[node name="CancelBtn" type="Button" parent="safelocker/KeypadUI/Control" index="4" unique_id=1921004313]
+layout_mode = 0
+offset_left = 959.0
+offset_top = 499.0
+offset_right = 1129.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 22
+text = "Cancel
+"

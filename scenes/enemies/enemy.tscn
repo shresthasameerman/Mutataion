@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://clf0kbwcrsxyg"]
+
+[ext_resource type="Script" uid="uid://cwffy5cqaveyg" path="res://scripts/enemy.gd" id="1_6xk8f"]
+[ext_resource type="Script" uid="uid://j4d2u828h6n3" path="res://scripts/hurtbox.gd" id="2_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://brhcxakpgwly3" path="res://scenes/asset/mutant_model.tscn" id="2_38ino"]
+[ext_resource type="AudioStream" uid="uid://crpj4gut5aqsn" path="res://assets/sounds/dragon-studio-dinosaur-growl-487679.mp3" id="4_fcftc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykcao"]
+radius = 0.27441406
+height = 0.98833007
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xk8f"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Enemy" type="CharacterBody3D" unique_id=470611611]
+script = ExtResource("1_6xk8f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=289111692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10776815, 0)
+shape = SubResource("CapsuleShape3D_ykcao")
+debug_color = Color(0.99999994, 0.01085926, 0.05761656, 0.41960785)
+
+[node name="MutantModel" parent="." unique_id=2075728057 instance=ExtResource("2_38ino")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.37047523, 0.08757079)
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=487644254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.852656)
+script = ExtResource("2_8e3ao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2037776705]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.400172)
+shape = SubResource("BoxShape3D_6xk8f")
+
+[node name="GrowlSound" type="AudioStreamPlayer3D" parent="." unique_id=1394619932]
+stream = ExtResource("4_fcftc")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1904496003]

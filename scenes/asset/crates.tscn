@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bbad0t3shm11g"]
+
+[ext_resource type="PackedScene" uid="uid://cmvnkajkd5mbt" path="res://assets/meshes/scifi_crate.glb" id="1_4oatn"]
+
+[node name="crates" unique_id=76210813 instance=ExtResource("1_4oatn")]

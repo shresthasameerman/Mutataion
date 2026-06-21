@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ddyb75v4sc8l6"]
+
+[ext_resource type="PackedScene" uid="uid://dxowuq0gkq5ua" path="res://assets/meshes/scifi_light.glb" id="1_w8du8"]
+
+[node name="light" unique_id=2001238600 instance=ExtResource("1_w8du8")]

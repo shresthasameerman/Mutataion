@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bxdngh17aeupq"]
+
+[ext_resource type="Script" uid="uid://8sqk4hkxpnjx" path="res://scripts/player.gd" id="1_8afob"]
+[ext_resource type="AudioStream" uid="uid://cel4ev07ka4vf" path="res://assets/sounds/brvhrtz-heartbeat-02-225103.mp3" id="2_dovo2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8afob"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1007585424 groups=["player"]]
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1631017414]
+shape = SubResource("CapsuleShape3D_x7p2l")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1004813248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843934, -0.14569473)
+
+[node name="InteractLabel" type="Label3D" parent="Camera3D" unique_id=1671704686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, -1.5)
+visible = false
+layers = 2
+billboard = 1
+text = "E Pickup
+"
+font_size = 64
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1317457474]
+mesh = SubResource("CapsuleMesh_8afob")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=2018919716]
+target_position = Vector3(0, -1, -2)
+
+[node name="HeartbeatAudio" type="AudioStreamPlayer" parent="." unique_id=1654307823]
+stream = ExtResource("2_dovo2")
+
+[node name="FootstepAudio" type="AudioStreamPlayer" parent="." unique_id=1511994677]

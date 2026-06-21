@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dc8ctqwujjy3y"]
+
+[ext_resource type="PackedScene" uid="uid://caleewmlyjsnx" path="res://assets/meshes/sphere_glb.glb" id="1_e06og"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e06og"]
+radius = 1.0454204
+
+[node name="sphere_glb" unique_id=1207395361 instance=ExtResource("1_e06og")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1872729647]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=544170112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1045138, 0)
+shape = SubResource("SphereShape3D_e06og")
